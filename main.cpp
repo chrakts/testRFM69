@@ -5,20 +5,27 @@
 #include "External.h"
 #include <avr/interrupt.h>
 #include <util/delay.h>
+#include <string.h>
 #include "SPI.h"
 #include "RFM69.h"
+
 
 enum{QUARZ,CLK2M,CLK32M};
 
 #define SYSCLK QUARZ
 
 #define PLL 0
+#define ENCRYPTKEY    "sampleEncryptKey"
+#define myID          33
+#define toID          55
+#define NETWORK       3
 
 void init_clock(int sysclk, int pll);
 
 int main(void)
 {
-
+  char text[32];
+  uint32_t i=0;
     // Insert code
   init_clock(SYSCLK, PLL);
   PORTD.DIRSET = PIN0_bm;
@@ -31,20 +38,27 @@ int main(void)
 
 
   debug.open(Serial::BAUD_57600,F_CPU);
-  debug.print("\nHallo vom RFM69");
-  debug.print("\nHallo vom RFM69\n");
+  debug.print("\nHallo vom Sender");
+  debug.print("\nHallo vom Sender\n");
 
-  myRFM.initialize(86,45,23);
+  myRFM.initialize(86,myID,NETWORK);
+  myRFM.encrypt(ENCRYPTKEY);
   myRFM.readAllRegsCompact();
-
   while(1)
   {
-    MyTimers[RFM69_TIMER].value = 5;
-    MyTimers[RFM69_TIMER].state = TM_START;
+    sprintf(text,"Neue Nachricht %lx\n",i);
+    debug.print(text);
+    MyTimers[SEND_REPEAT].state = TM_START;
 
-    while(MyTimers[RFM69_TIMER].state != TM_STOP)
+    while(MyTimers[SEND_REPEAT].state != TM_STOP)
       ;
+    if ( myRFM.sendWithRetry(toID, text, strlen(text)) )
+      debug.print(" ok!");
+    else
+      debug.print(" nothing...");
+
     PORTD.OUTTGL = PIN0_bm;
+    i++;
   }
 
   return 0;

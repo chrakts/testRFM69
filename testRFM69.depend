@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1541450765 source:/home/chrak/repositories/communication/CmultiBusy.cpp
+1542649709 source:/home/chrak/repositories/communication/CmultiBusy.cpp
 	<avr/io.h>
 	<avr/interrupt.h>
 	<uartHardware.h>
@@ -40,13 +40,13 @@
 1541534488 source:/home/chrak/repositories/communication/Serial.cpp
 	"Serial.h"
 
-1542488241 source:/home/chrak/repositories/RFM69-atxmega/RFM69.cpp
+1542649750 source:/home/chrak/repositories/RFM69-atxmega/RFM69.cpp
 	<RFM69.h>
 	<RFM69registers.h>
 	<SPI.h>
 	<avr/interrupt.h>
 
-1542487932 /home/chrak/repositories/RFM69-atxmega/RFM69.h
+1542645834 /home/chrak/repositories/RFM69-atxmega/RFM69.h
 	<Arduino.h>
 	<SPI.h>
 	<avr/io.h>
@@ -54,7 +54,7 @@
 	"rfm69Hardware.h"
 	"MyTimer.h"
 
-1542435578 /home/chrak/repositories/spi/SPI.h
+1542489968 /home/chrak/repositories/spi/SPI.h
 	"spiHardware.h"
 
 1542397412 /home/chrak/repositories/spi/spiHardware.h
@@ -70,11 +70,11 @@
 	<avr/io.h>
 	<avr/interrupt.h>
 
-1542487638 /home/chrak/repositories/testRFM69/rfm69Hardware.h
+1542649727 /home/chrak/repositories/testRFM69/rfm69Hardware.h
 
 1542137135 /home/chrak/repositories/RFM69-atxmega/RFM69registers.h
 
-1542482837 source:/home/chrak/repositories/spi/SPI.cpp
+1542489968 source:/home/chrak/repositories/spi/SPI.cpp
 	"SPI.h"
 	"Operators.h"
 	<stdlib.h>
@@ -82,22 +82,23 @@
 	<util/delay.h>
 	<avr/sleep.h>
 
-1493457896 /home/chrak/repositories/spi/Operators.h
+1542489968 /home/chrak/repositories/spi/Operators.h
 	<stdlib.h>
 	<stddef.h>
 
-1542480254 source:/home/chrak/repositories/testRFM69/Globals.cpp
+1542645401 source:/home/chrak/repositories/testRFM69/Globals.cpp
 	<stdint.h>
 	"Serial.h"
 	"MyTimer.h"
 	"Communication.h"
 	"CRC_Calc.h"
 
-1542488072 source:/home/chrak/repositories/testRFM69/main.cpp
+1542663193 source:/home/chrak/repositories/testRFM69/main.cpp
 	<avr/io.h>
 	"External.h"
 	<avr/interrupt.h>
 	<util/delay.h>
+	<string.h>
 	"SPI.h"
 	"RFM69.h"
 

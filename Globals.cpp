@@ -21,7 +21,7 @@ volatile bool nextSendReady=false;
 // Timerwert 16 entspricht 100ms
 volatile TIMER MyTimers[MYTIMER_NUM]= {
   {TM_STOP,RESTART_NO,4,0,NULL},
-  {TM_START,RESTART_YES,4,0,NULL},
+  {TM_START,RESTART_NO,10,0,NULL},
   {TM_STOP,RESTART_NO,100,0,NULL}		// Timeout-Timer
 };
 
