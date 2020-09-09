@@ -1,0 +1,106 @@
+obj/Release/RFM69-atxmega/RFM69.o: ../RFM69-atxmega/RFM69.cpp \
+ /home/chrak/Daten/Software/repositories/RFM69-atxmega/RFM69.h \
+ /home/chrak/.local/share/avr8-gnu-toolchain-linux_x86_64/avr/include/avr/io.h \
+ /home/chrak/.local/share/avr8-gnu-toolchain-linux_x86_64/avr/include/avr/sfr_defs.h \
+ /home/chrak/.local/share/avr8-gnu-toolchain-linux_x86_64/avr/include/inttypes.h \
+ /home/chrak/.local/share/avr8-gnu-toolchain-linux_x86_64/lib/gcc/avr/5.4.0/include/stdint.h \
+ /home/chrak/.local/share/avr8-gnu-toolchain-linux_x86_64/avr/include/stdint.h \
+ /home/chrak/.local/share/avr8-gnu-toolchain-linux_x86_64/avr/include/avr/iox32a4u.h \
+ /home/chrak/.local/share/avr8-gnu-toolchain-linux_x86_64/avr/include/avr/portpins.h \
+ /home/chrak/.local/share/avr8-gnu-toolchain-linux_x86_64/avr/include/avr/common.h \
+ /home/chrak/.local/share/avr8-gnu-toolchain-linux_x86_64/avr/include/avr/version.h \
+ /home/chrak/.local/share/avr8-gnu-toolchain-linux_x86_64/avr/include/avr/xmega.h \
+ /home/chrak/.local/share/avr8-gnu-toolchain-linux_x86_64/avr/include/avr/fuse.h \
+ /home/chrak/.local/share/avr8-gnu-toolchain-linux_x86_64/avr/include/avr/lock.h \
+ /home/chrak/Daten/Software/repositories/testRFM69/External.h \
+ /home/chrak/Daten/Software/repositories/communication/CRC_Calc.h \
+ /home/chrak/.local/share/avr8-gnu-toolchain-linux_x86_64/avr/include/stdio.h \
+ /home/chrak/.local/share/avr8-gnu-toolchain-linux_x86_64/lib/gcc/avr/5.4.0/include/stdarg.h \
+ /home/chrak/.local/share/avr8-gnu-toolchain-linux_x86_64/lib/gcc/avr/5.4.0/include/stddef.h \
+ /home/chrak/Daten/Software/repositories/communication/Serial.h \
+ /home/chrak/.local/share/avr8-gnu-toolchain-linux_x86_64/avr/include/stdlib.h \
+ /home/chrak/Daten/Software/repositories/testRFM69/uartHardware.h \
+ /home/chrak/.local/share/avr8-gnu-toolchain-linux_x86_64/avr/include/util/delay.h \
+ /home/chrak/.local/share/avr8-gnu-toolchain-linux_x86_64/avr/include/util/delay_basic.h \
+ /home/chrak/.local/share/avr8-gnu-toolchain-linux_x86_64/avr/include/math.h \
+ /home/chrak/.local/share/avr8-gnu-toolchain-linux_x86_64/avr/include/avr/pgmspace.h \
+ /home/chrak/.local/share/avr8-gnu-toolchain-linux_x86_64/avr/include/avr/interrupt.h \
+ /home/chrak/Daten/Software/repositories/testRFM69/MyTimer.h \
+ /home/chrak/Daten/Software/repositories/spi/spi_driver.h \
+ /home/chrak/.local/share/avr8-gnu-toolchain-linux_x86_64/lib/gcc/avr/5.4.0/include/stdbool.h \
+ /home/chrak/Daten/Software/repositories/testRFM69/rfm69Hardware.h \
+ /home/chrak/Daten/Software/repositories/testRFM69/MyTimer.h \
+ /home/chrak/.local/share/avr8-gnu-toolchain-linux_x86_64/avr/include/string.h \
+ /home/chrak/Daten/Software/repositories/RFM69-atxmega/RFM69registers.h \
+ /home/chrak/Daten/Software/repositories/spi/SPI.h \
+ /home/chrak/Daten/Software/repositories/testRFM69/spiHardware.h
+
+/home/chrak/Daten/Software/repositories/RFM69-atxmega/RFM69.h:
+
+/home/chrak/.local/share/avr8-gnu-toolchain-linux_x86_64/avr/include/avr/io.h:
+
+/home/chrak/.local/share/avr8-gnu-toolchain-linux_x86_64/avr/include/avr/sfr_defs.h:
+
+/home/chrak/.local/share/avr8-gnu-toolchain-linux_x86_64/avr/include/inttypes.h:
+
+/home/chrak/.local/share/avr8-gnu-toolchain-linux_x86_64/lib/gcc/avr/5.4.0/include/stdint.h:
+
+/home/chrak/.local/share/avr8-gnu-toolchain-linux_x86_64/avr/include/stdint.h:
+
+/home/chrak/.local/share/avr8-gnu-toolchain-linux_x86_64/avr/include/avr/iox32a4u.h:
+
+/home/chrak/.local/share/avr8-gnu-toolchain-linux_x86_64/avr/include/avr/portpins.h:
+
+/home/chrak/.local/share/avr8-gnu-toolchain-linux_x86_64/avr/include/avr/common.h:
+
+/home/chrak/.local/share/avr8-gnu-toolchain-linux_x86_64/avr/include/avr/version.h:
+
+/home/chrak/.local/share/avr8-gnu-toolchain-linux_x86_64/avr/include/avr/xmega.h:
+
+/home/chrak/.local/share/avr8-gnu-toolchain-linux_x86_64/avr/include/avr/fuse.h:
+
+/home/chrak/.local/share/avr8-gnu-toolchain-linux_x86_64/avr/include/avr/lock.h:
+
+/home/chrak/Daten/Software/repositories/testRFM69/External.h:
+
+/home/chrak/Daten/Software/repositories/communication/CRC_Calc.h:
+
+/home/chrak/.local/share/avr8-gnu-toolchain-linux_x86_64/avr/include/stdio.h:
+
+/home/chrak/.local/share/avr8-gnu-toolchain-linux_x86_64/lib/gcc/avr/5.4.0/include/stdarg.h:
+
+/home/chrak/.local/share/avr8-gnu-toolchain-linux_x86_64/lib/gcc/avr/5.4.0/include/stddef.h:
+
+/home/chrak/Daten/Software/repositories/communication/Serial.h:
+
+/home/chrak/.local/share/avr8-gnu-toolchain-linux_x86_64/avr/include/stdlib.h:
+
+/home/chrak/Daten/Software/repositories/testRFM69/uartHardware.h:
+
+/home/chrak/.local/share/avr8-gnu-toolchain-linux_x86_64/avr/include/util/delay.h:
+
+/home/chrak/.local/share/avr8-gnu-toolchain-linux_x86_64/avr/include/util/delay_basic.h:
+
+/home/chrak/.local/share/avr8-gnu-toolchain-linux_x86_64/avr/include/math.h:
+
+/home/chrak/.local/share/avr8-gnu-toolchain-linux_x86_64/avr/include/avr/pgmspace.h:
+
+/home/chrak/.local/share/avr8-gnu-toolchain-linux_x86_64/avr/include/avr/interrupt.h:
+
+/home/chrak/Daten/Software/repositories/testRFM69/MyTimer.h:
+
+/home/chrak/Daten/Software/repositories/spi/spi_driver.h:
+
+/home/chrak/.local/share/avr8-gnu-toolchain-linux_x86_64/lib/gcc/avr/5.4.0/include/stdbool.h:
+
+/home/chrak/Daten/Software/repositories/testRFM69/rfm69Hardware.h:
+
+/home/chrak/Daten/Software/repositories/testRFM69/MyTimer.h:
+
+/home/chrak/.local/share/avr8-gnu-toolchain-linux_x86_64/avr/include/string.h:
+
+/home/chrak/Daten/Software/repositories/RFM69-atxmega/RFM69registers.h:
+
+/home/chrak/Daten/Software/repositories/spi/SPI.h:
+
+/home/chrak/Daten/Software/repositories/testRFM69/spiHardware.h:

@@ -23,14 +23,23 @@
 			</Environment>
 		</Build>
 		<Compiler>
-			<Add option="-mmcu=atxmega32a4u" />
 			<Add option="-Wall" />
+			<Add option="-mmcu=atxmega32a4u" />
+			<Add option="-c -fpermissive" />
+			<Add option="-Wno-enum-compare" />
+			<Add option="-MD -MP -MF" />
+			<Add option="-ffunction-sections" />
+			<Add option="-fdata-sections" />
+			<Add option="-fpack-struct" />
+			<Add option="-funsigned-char" />
+			<Add option="-funsigned-bitfields" />
 			<Add option="-DF_CPU=32000000UL" />
 			<Add option="-Datxmega" />
-			<Add directory="/home/chrak/repositories/testRFM69" />
-			<Add directory="/home/chrak/repositories/RFM69-atxmega" />
-			<Add directory="/home/chrak/repositories/communication" />
-			<Add directory="/home/chrak/repositories/spi" />
+			<Add directory="/home/chrak/Daten/Software/repositories/testRFM69" />
+			<Add directory="/home/chrak/Daten/Software/repositories/RFM69-atxmega" />
+			<Add directory="/home/chrak/Daten/Software/repositories/communication" />
+			<Add directory="/home/chrak/Daten/Software/repositories/spi" />
+			<Add directory="/home/chrak/Daten/Software/repositories/Secrets" />
 		</Compiler>
 		<Linker>
 			<Add option="-mmcu=atxmega32a4u" />
@@ -48,30 +57,26 @@
 		<Unit filename="../RFM69-atxmega/RFM69.cpp" />
 		<Unit filename="../RFM69-atxmega/RFM69.h" />
 		<Unit filename="../RFM69-atxmega/RFM69registers.h" />
-		<Unit filename="../communication/CRC_Calc.cpp" />
+		<Unit filename="../Secrets/secrets.h" />
 		<Unit filename="../communication/CRC_Calc.h" />
-		<Unit filename="../communication/CmultiBusy.cpp" />
-		<Unit filename="../communication/CmultiBusy.h" />
-		<Unit filename="../communication/Communication.cpp" />
-		<Unit filename="../communication/Communication.h" />
 		<Unit filename="../communication/Serial.cpp" />
 		<Unit filename="../communication/Serial.h" />
 		<Unit filename="../communication/UART.h" />
 		<Unit filename="../spi/SPI.cpp" />
 		<Unit filename="../spi/SPI.h" />
+		<Unit filename="../spi/spi_driver.cpp" />
+		<Unit filename="../spi/spi_driver.h" />
 		<Unit filename="External.h" />
 		<Unit filename="Globals.cpp" />
 		<Unit filename="MyTimer.cpp" />
 		<Unit filename="MyTimer.h" />
+		<Unit filename="ledHardware.h" />
 		<Unit filename="recMain.cpp" />
 		<Unit filename="rfm69Hardware.h" />
 		<Unit filename="spiHardware.h" />
 		<Unit filename="uartHardware.h" />
 		<Extensions>
-			<envvars />
-			<code_completion />
 			<lib_finder disable_auto="1" />
-			<debugger />
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>

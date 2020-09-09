@@ -6,6 +6,8 @@
  */
 
 #include "MyTimer.h"
+#include "External.h"
+
 extern volatile TIMER MyTimers[];
 
 
@@ -24,6 +26,11 @@ void init_mytimer(void)
 	RTC.COMP = 0;
 	RTC.CTRL = 2; // Teiler 1 ???
 	RTC.INTCTRL	= RTC_OVFINTLVL_MED_gc;
+}
+
+void clear2Send( void )
+{
+  nextSendReady = true;
 }
 
 void no_function( void )

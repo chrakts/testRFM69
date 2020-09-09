@@ -13,6 +13,7 @@
 #include "CRC_Calc.h"
 #include "Serial.h"
 #include "MyTimer.h"
+#include "spi_driver.h"
 
 extern volatile uint8_t UART0_ring_received;
 //extern volatile  char UART0_ring_buffer[UART0_RING_BUFFER_SIZE];

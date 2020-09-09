@@ -3,10 +3,10 @@
 
 #define RFM69_CS_PORT       PORTD
 #define RFM69_CS            PIN4_bm
-#define RFM69_INT_PORT      PORTD
-#define RFM69_INT_PIN       PIN2_bm
-#define RFM69_INT_PINCTRL   PIN2CTRL
-#define RFM69_INTVEC        PORTD_INT1_vect
+#define RFM69_INT_PORT      PORTA
+#define RFM69_INT_PIN       PIN1_bm
+#define RFM69_INT_PINCTRL   PIN1CTRL
+#define RFM69_INTVEC        PORTA_INT1_vect
 #define RFM69_INT_PIN_STATE (RFM69_INT_PORT.IN & RFM69_INT_PIN)
 
 #endif

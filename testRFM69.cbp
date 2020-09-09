@@ -23,8 +23,8 @@
 			</Environment>
 		</Build>
 		<Compiler>
-			<Add option="-mmcu=atxmega32a4u" />
 			<Add option="-Wall" />
+			<Add option="-mmcu=atxmega32a4u" />
 			<Add option="-DF_CPU=18432000UL" />
 			<Add option="-Datxmega" />
 			<Add directory="/home/chrak/repositories/testRFM69" />
@@ -70,10 +70,7 @@
 		<Unit filename="spiHardware.h" />
 		<Unit filename="uartHardware.h" />
 		<Extensions>
-			<envvars />
-			<code_completion />
 			<lib_finder disable_auto="1" />
-			<debugger />
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>

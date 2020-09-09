@@ -12,13 +12,15 @@
 
 enum{QUARZ,CLK2M,CLK32M};
 
+const char RFM69Key[16] = {RFM69KEY};
+
 #define SYSCLK QUARZ
 
 #define PLL 0
-#define ENCRYPTKEY    "sampleEncryptKey"
-#define myID          33
-#define toID          55
-#define NETWORK       3
+
+#define myID          'L'
+#define toID          'T'
+#define NETWORK       '1'
 
 void init_clock(int sysclk, int pll);
 
@@ -42,7 +44,7 @@ int main(void)
   debug.print("\nHallo vom Sender\n");
 
   myRFM.initialize(86,myID,NETWORK);
-  myRFM.encrypt(ENCRYPTKEY);
+  myRFM.encrypt(RFM69Key);
   myRFM.readAllRegsCompact();
   while(1)
   {

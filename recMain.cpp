@@ -8,16 +8,20 @@
 #include <string.h>
 #include "SPI.h"
 #include "RFM69.h"
+#include "secrets.h"
+#include "ledHardware.h"
 
 enum{QUARZ,CLK2M,CLK32M};
 
-#define SYSCLK QUARZ
+#define SYSCLK CLK32M
 
-#define PLL 2
+#define PLL 0
 #define ENCRYPTKEY    "sampleEncryptKey"
-#define myID          55
+#define myID          'L'
 #define toID          33
-#define NETWORK       3
+#define NETWORK       '1'
+
+const char RFM69Key[16] = {RFM69KEY};
 
 void init_clock(int sysclk, int pll);
 
@@ -25,27 +29,51 @@ int main(void)
 {
     // Insert code
   init_clock(SYSCLK, PLL);
-  PORTD.DIRSET = PIN0_bm;
-  init_mytimer();
 
-  RFM69 myRFM(&MyTimers[RFM69_TIMER]);
+ 	PORTA_DIRSET = PIN2_bm | PIN3_bm | PIN4_bm;
+	PORTA_OUTSET = 0xff;
+
+	PORTB_DIRSET = 0xff;
+
+	PORTC_DIRSET = PIN1_bm;
+
+	PORTD_DIRSET = PIN0_bm | PIN4_bm | PIN5_bm | PIN7_bm;
+	PORTD_DIRCLR = PIN6_bm;
+	PORTD_OUTCLR = PIN4_bm | PIN5_bm;
+
+	PORTE_DIRSET = 0xff;
+  LEDROTSETUP;
+  LEDGRUENSETUP;
+  LEDSIGNALSETUP;
+
+  LEDSIGNAL_ON;
+  LEDROT_ON;
+  _delay_ms(1000);
+  init_mytimer();
+  SPI_Master_t spiRFM69;
+
+  SPI_MasterInit(&spiRFM69,&(SPID),&(PORTD),false,SPI_MODE_0_gc,SPI_INTLVL_LO_gc,false,SPI_PRESCALER_DIV128_gc);
+
+  RFM69 myRFM(&MyTimers[RFM69_TIMER],&spiRFM69,true);
 
   PMIC_CTRL = PMIC_LOLVLEX_bm | PMIC_HILVLEN_bm | PMIC_MEDLVLEN_bm;
   sei();
 
-
   debug.open(Serial::BAUD_57600,F_CPU);
-  debug.print("\nHallo vom Empfänger");
-  debug.print("\nHallo vom Empfänger\n");
+  debug.print("\nHallo vom Empfaenger");
 
   myRFM.initialize(86,myID,NETWORK);
-  myRFM.encrypt(ENCRYPTKEY);
-  myRFM.readAllRegsCompact();
+  myRFM.encrypt(RFM69Key);
+  //myRFM.readAllRegsCompact();
+  debug.print("\nInit fertig\n");
+  LEDROT_OFF;
+  nextSendReady=true;
   while(1)
   {
     //check for any received packets
-    if (myRFM.receiveDone())
+/*    if (myRFM.receiveDone())
     {
+      LEDROT_ON;
       debug.pformat("[%d]-[%d]-[RX_RSSI: %d]:",myRFM.SENDERID,myRFM.DATALEN,myRFM.RSSI);
       debug.print((char *)myRFM.DATA);
 
@@ -54,7 +82,23 @@ int main(void)
         myRFM.sendACK();
         debug.print(" - ACK sent\n");
       }
-      PORTD.OUTTGL = PIN0_bm;
+
+      LEDROT_OFF;
+    }*/
+    if(nextSendReady)
+    {
+      LEDSIGNAL_ON;
+      myRFM.sendWithRetry('T', "BRL1SF1JTKaffee", 15, 10, 100);
+      //myRFM.send('T', "BRL1SF1JTKaffee", 15,false);
+      nextSendReady = false;
+      LEDSIGNAL_OFF;
+    }
+    myRFM.sleep();
+    while(1)
+    {
+      _delay_ms(200);
+      LEDSIGNAL_TOGGLE;
+      LEDROT_TOGGLE;
     }
 
   }

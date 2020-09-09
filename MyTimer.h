@@ -36,6 +36,7 @@ typedef struct Timer TIMER;
 
 void LED_toggle(uint8_t test);
 void init_mytimer(void);
+void clear2Send(void);
 
 
 
